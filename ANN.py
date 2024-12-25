@@ -1,6 +1,6 @@
 import pandas as pd
 data = pd.read_csv(r"C:\Users\Rajarshi Basak\Study_Metarials\Machine Learning\Machine Learning\Machine Learning A-Z Dataset\Part 8 - Deep Learning\Section 39 - Artificial Neural Networks (ANN)\Python\Churn_Modelling.csv")
-print(data.iloc[:,3:13].head())
+print(data.iloc[:,3:].head())
 
 X = data.iloc[:,3:13].values
 y = data.iloc[:,13].values
@@ -22,8 +22,9 @@ X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
 #building ANN model
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+
+from tf_keras.models import Sequential
+from tf_keras.layers import Dense
 
 classifier = Sequential()
 #add input layer

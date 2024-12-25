@@ -14,7 +14,7 @@ plt.ylabel("score")
 plt.show()
 
 from sklearn.cluster import AgglomerativeClustering
-ac = AgglomerativeClustering(n_clusters=5,affinity="euclidean",linkage="ward")
+ac = AgglomerativeClustering(n_clusters=5,linkage="ward")
 y_pred = ac.fit_predict(X)
 print(y_pred)
 

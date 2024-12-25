@@ -57,25 +57,3 @@ plt.title("clicked_ads")
 plt.xlabel("Ads")
 plt.ylabel("No of clicks")
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

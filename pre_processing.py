@@ -47,4 +47,31 @@ print(X_train)
 print(X_test)
 
 
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data_df = pd.read_csv(r"C:\Users\Rajarshi Basak\Study_Metarials\Machine Learning\Machine Learning\Machine Learning "
+                      r"A-Z Dataset\Part 1 - Data Preprocessing\Section 2 -------------------- Part 1 - Data "
+                      r"Preprocessing --------------------\Python\Data.csv")
+data = data_df.values
+X = data[:,:-1]
+y = data[:,-1]
+
+from sklearn.impute import SimpleImputer
+X[:,1:] = np.array(SimpleImputer(missing_values=np.nan,strategy="mean").fit_transform(X[:,1:]))
+
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+from sklearn.compose import ColumnTransformer
+y = LabelEncoder().fit_transform(y)
+X = np.array(ColumnTransformer(transformers=[("Country_encode",OneHotEncoder(),[0])], remainder="passthrough").fit_transform(X)).astype(int)
+
+from sklearn.preprocessing import StandardScaler
+X = StandardScaler().fit_transform(X)
+
+np.set_printoptions(suppress=True)
+
+print(X,y)
+
+
 
