@@ -47,8 +47,7 @@ with mlflow.start_run():
     mlflow.log_param("degree", 4)
     mlflow.log_metric("mse",mean_squared_error(y, linReg2.predict(X_trans)))
     mlflow.sklearn.log_model(sk_model=linReg2,name="polynomial_regression")
-"""run_id = '0b36905cd34f439786e737e5e085d4d5'
-mlflow.register_model(model_uri=f'runs:/{run_id}/polynomial_regression',name = 'polynomial_regression')"""
+
 
 model_name = 'polynomial_regression'
 version = '1'
